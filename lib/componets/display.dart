@@ -3,22 +3,21 @@ import 'package:flutter/material.dart';
 
 class Display extends StatelessWidget {
   final String text;
-  static const Color displayColor = Color.fromRGBO(48, 48, 48, 1);
 
-  const Display({super.key, required this.text});
+  const Display(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 2,
+      flex: 1,
       child: Container(
-        color: displayColor,
+        color: const Color.fromRGBO(48, 48, 48, 1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: const EdgeInsets.all(8.0),
               child: AutoSizeText(
                 text,
                 minFontSize: 20,
@@ -26,10 +25,10 @@ class Display extends StatelessWidget {
                 maxLines: 1,
                 textAlign: TextAlign.end,
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 80,
                   fontWeight: FontWeight.w100,
                   decoration: TextDecoration.none,
+                  fontSize: 80,
+                  color: Colors.white,
                 ),
               ),
             ),
